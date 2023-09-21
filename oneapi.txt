@@ -1,0 +1,23 @@
+srun --pty bash
+
+source /opt/intel/oneapi/setvars.sh
+
+conda init bash
+
+exit
+
+repeat first srun and source
+
+conda env list
+
+conda activate env_name
+
+echo $(ip a | grep -v -e "127.0.0.1" -e "inet6" | grep "inet" | awk {'print($2)}' | sed 's/\/.*//')
+
+jupyter-lab --ip 10.10.10.X 
+
+open new powershell
+
+ssh myidc -L 8888:10.10.10.X:8888 
+
+http://localhost:8888/lab
